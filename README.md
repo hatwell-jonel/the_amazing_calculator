@@ -2,11 +2,11 @@
 
 On the "Pro version" to see the why this calculator is amazing. :)
 
-[![Live Site:](https://hatwell-jonel.github.io/the_amazing_calculator/)]
+- [Live Site:](https://hatwell-jonel.github.io/the_amazing_calculator/)
 
 ### Useful resources
 
-- [Font awesome](https://getcssscan.com/css-box-shadow-examples) - for icons.
+- [Font awesome](https://fontawesome.com/) - for icons.
 - [Box shadow](https://getcssscan.com/css-box-shadow-examples) - List of boxshadow.
 - [For cutting the audio](https://mp3cut.net/) - Editing the audio.
 - [Song](https://www.youtube.com/watch?v=HQDWzq3agqE) - For Audio
