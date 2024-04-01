@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Amazing Calculator | Jonel Hatwell</title>
+    <link rel="icon" type="image/png" href="./assets/favicon_calculator.png">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="calculator">
+            <div class="calculator__header">
+                <h1 class="calculator__header-title">Calculator</h1>
+
+                <div class="calculator__header-version">
+                    <input type="checkbox" id="version" />
+                    <label for="version">Pro Version</label>
+                </div>
+            </div>
+            <div class="calculator__screen">
+                <input type="text" id="screen" value="" placeholder="0" readonly>
+                <p class="PAKULO ">Miss na kita! 🥺</p>
+            </div> 
+            <div class="calculator__buttons">
+                <button class="span-two clear">AC</button>
+                <button class="delete">DEL</button> 
+                <button class="division">&divide;</button>
+
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button class="multiply">*</button>
+
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button class="addition">+</button>
+
+                
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button class="subtraction">-</button>
+
+                <button class="decimal">.</button>
+                <button>0</button>
+                <button class="span-two equals">=</button>
+            </div>
+        </div>
+
+        <div class="attribution">
+            <span>&copy; All rights reserved | </span>
+            <a href="https://www.linkedin.com/in/jonel-hatwell/" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>Jonel Hatwell</a>
+        </div>
+    </div>
+
+
+    
+    <!-- <audio controls loop>
+        <source src="/assets/somebodyToYou.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+    </audio> -->
+
+    <img src="./assets/bear-gif.gif" id="bear_gif" alt="">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root{
+    --clr-offwhite: hsla(0, 0%, 87%, 0.867);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-black: hsl(0, 0%, 0%);
+
+    --clr-grayish: rgb(63, 71, 80);
+
+    --clr-pink: hsl(336, 89%, 56%);
+    --clr-babypink: #facfe8;
+}
+
+
+/* START: GLOBALS */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--clr-offwhite);
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    min-width: 400px;
+}
+
+button{
+    cursor: pointer !important;
+}
+
+.container{
+    width: 90%;
+    max-width: 500px;
+    /* margin-top: -250px; */
+}
+
+
+.calculator__screen{
+    position: relative;
+    margin-block: 1rem;
+}
+
+.PAKULO{
+    background-color: var(--clr-white);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--clr-pink);
+
+    /* for animation */
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .4s ease-in-out;
+}
+
+.PAKULO_ANIMATION{
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+    border: 1px solid var(--clr-black);
+
+}
+
+.calculator__buttons{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: minmax(70px, auto) repeat(4,100px);
+}
+
+.calculator__buttons > button{
+    font-size: 2rem;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+#version {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    -webkit-appearance: none;
+    -webkit-appearance: none;
+    background: #c6c6c6;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: background 300ms linear;
+}
+
+/* circle */
+#version::before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    top: 3px;
+    left: 4px;
+    border-radius: 10px;
+    background-color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: left 300ms linear;
+}  
+
+#version:checked{
+    background: var(--clr-pink);
+}
+
+#version:checked::before{
+    left: 25px;
+    background-color: #fff;
+}
+
+
+
+
+
+#bear_gif{
+    display: none;
+    position: fixed;
+    width: 200px;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+@media screen and (max-width: 500px) {
+    #bear_gif{
+        display: none;
+    }
+}
+/* END: GLOBALS */
+
+
+/* START: ANIMATIONS */
+.animation{
+    animation: popupAnimation .4s ease forwards;
+    opacity: 0;
+}
+
+@keyframes popupAnimation {
+    0% {
+      opacity: 0;
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+      opacity: 1;
+        transform: translateY(-0px);
+        
+    }
+}
+
+.dramatic-animation{
+    animation:  1s ease-in-out;
+}
+
+@keyframes dramatic-animation {
+    0% { 
+        height: 0;
+        opacity: 0;
+    }
+    100% { 
+        height: 100%;
+        opacity: 1;
+    visibility: visible;
+
+    }
+}
+
+
+/* END: ANIMATIONS */
+
+
+/* START: PROVERSION  */
+
+.pro-version{
+    background: url(./assets/pro-background-desktop.jpg) no-repeat center/cover;
+}
+
+.pro-version .calculator__header-title{
+    color: var(--clr-grayish);
+}
+
+.pro-version  .calculator__buttons button{
+    border: 1px solid var(--clr-white);
+    color: var(--clr-pink);
+    transition: .15s ease-in-out;
+}
+
+.pro-version  .calculator__buttons button:hover{
+    opacity: .8;
+    color: white;
+    background: #cc2b5e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #753a88, #cc2b5e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #753a88, #cc2b5e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.pro-version .calculator__header-version label{
+    color: var(--clr-pink);
+    font-weight: bold;
+}
+
+.pro-version .attribution{
+    color: var(--clr-white);
+}
+
+.pro-version .attribution a{
+    color: var(--clr-white);
+}
+
+
+.pro-version  .attribution a .fa-linkedin{
+    color: var(--clr-white);
+}
+
+/* END: PROVERSION  */
+
+
+.calculator{
+    background-color: var(--clr-white);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+.calculator__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calculator__header-title{
+    font-size: 2rem;
+}
+
+.calculator__header-version{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.calculator__header-version label{
+    cursor: pointer;
+}
+
+#screen{
+    width: 100%;
+    padding: 1rem;
+    text-align: right;
+    font-size: 3rem;
+}
+
+
+.attribution{
+    padding-top: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    color: var(--clr-black);
+}
+
+.attribution a{
+    color: var(--clr-black);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    text-decoration: none;
+}
+
+.attribution a .fa-linkedin{
+    color: #0b68c6;
+}
