@@ -3,6 +3,24 @@ $(document).ready(function(){
     let operator = ''; // Variable to store the operator
     const PAKULO = "Miss na kita! 🥺";
 
+     // Function to play the audio
+     function playAudio() {
+        $('#audio').trigger('play'); // Trigger the 'play' event on the audio element
+    }
+
+     // Function to pause the audio
+     function pauseAudio() {
+        $('#audio').trigger('pause'); // Trigger the 'pause' event on the audio element
+    }
+
+      // Function to reset the audio (stop and start from the beginning)
+      function resetAudio() {
+        pauseAudio(); // Pause the audio
+        $('#audio').prop('currentTime', 0); // Set the audio's current time to 0 (start from the beginning)
+        playAudio(); // Play the audio again
+    }
+
+
     let checkboxEl = $('#version');
     checkboxEl.change(function(){
         let value = $(this).prop('checked') ? 1 : 0;
@@ -20,6 +38,8 @@ $(document).ready(function(){
             $('.container').removeClass('animation');
             $('.PAKULO').removeClass('PAKULO_ANIMATION');
             $('#bear_gif').css('display', 'none');
+            resetAudio();
+            pauseAudio();
         }
     });
 
@@ -53,7 +73,10 @@ $(document).ready(function(){
             $('#screen').val(currentInput.slice(0, -1)); // Remove the last character from the current value
         }else if (buttonValue === '=') {
             if ($('#version').prop('checked')) {
+
                 $('.PAKULO').toggleClass('PAKULO_ANIMATION');
+                playAudio(); 
+
             } else {
                 let expression = $('#screen').val();
                 let result = eval(expression); // Use eval to evaluate the expression
