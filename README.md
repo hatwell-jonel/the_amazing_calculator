@@ -2,7 +2,7 @@
 
 On the "Pro version" to see the why this calculator is amazing. :)
 
-- [Live Site:](https://hatwell-jonel.github.io/the_amazing_calculator/)
+- [Live Site:](https://hatwell-jonel.github.io/the_amazing_calculator/) - https://hatwell-jonel.github.io/the_amazing_calculator/
 
 ### Useful resources
 
